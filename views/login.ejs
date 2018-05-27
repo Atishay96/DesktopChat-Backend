@@ -1,0 +1,42 @@
+<!Doctype html>
+<html lang="en" ng-app='chat' ng-controller='index' ng-cloak>
+  <head>
+  <title>Sterling</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Boostrap -->
+  <link rel="icon" href="#" type="image/ico"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!-- get all the links -->
+  <%- include ./links %>  
+  <script src="https://use.fontawesome.com/4b516afaf9.js"></script>
+  <!-- Style Css -->
+   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+
+  </head>
+  <body>
+  	<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card no" src="/images/images.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" name="index">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="number" id="inputEmail " name="phoneNumber" ng-model="phoneNumber" min="0" max="999999999999" oninput="this.value=(this.value   < Number(this.min) || this.value   > Number(this.max))  ? this.value = this.value.slice(0,11) : this.value;" class="form-control no po no-spin" placeholder="Enter your mobile number" autofocus>
+                <input ng-hide = '<%=type %> != login' id="inputPassword" class="form-control" placeholder="Password">
+                
+                <button class="btn btn-lg btn-primary btn-block no btn-signin pointer" ng-click="submit()" type="submit">Enter the maze</button>
+            </form>
+            <!-- <a href="#" class="forgot-password">
+                Forgot the password?
+            </a> -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+  </body>
+  <!-- JavaScripts -->
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
